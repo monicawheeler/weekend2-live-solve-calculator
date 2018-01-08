@@ -9,6 +9,9 @@ const app = express();
 
 const PORT = 5000;
 
+app.use(express.static('server/public'));
+app.use(bodyParser.urlencoded({extended: true}));
+
 app.use('/math', mathRouter);
 
 app.listen(PORT, () => {

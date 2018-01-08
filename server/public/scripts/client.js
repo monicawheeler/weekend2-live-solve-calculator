@@ -24,6 +24,10 @@ function submitClick() {
         data: entry,
         success: function(response) {
             console.log('POST response', response);
+            // after the post, clear the values
+            $('#firstNumber').val('');
+            $('#secondNumber').val('');
+
             // GET request should be in your success of your POST
             getHistory();
         }

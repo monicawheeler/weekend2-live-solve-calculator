@@ -15,7 +15,7 @@ function submitClick() {
     var entry = {
         firstNumber: $('#firstNumber').val(),
         secondNumber: $('#secondNumber').val(),
-        operation: 'add'
+        operation: $('#operation').val()
     };
 
     $.ajax({
@@ -44,7 +44,7 @@ function getHistory () {
             // append with a for loop
             for (let i = 0; i < response.length; i++) {
                 const element = response[i];
-                $('#history').prepend('<p>' + element.firstNumber + element.operator + element.secondNumber + '</p>');
+                $('#history').prepend('<p>' + element.firstNumber + ' ' + element.operator + ' ' + element.secondNumber + ' = ' + element.result + '</p>');
             }
         }
     });
